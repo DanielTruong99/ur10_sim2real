@@ -82,6 +82,11 @@ class RewardsCfg:
         weight=10.0,
         params={"asset_cfg": SceneEntityCfg("robot", body_names="ee_link"),  "std": 1.2, "command_name": "ee_pose"},
     )
+    orientation_bonus = RewTerm(
+        func=custom_mdp.position_orientation_bonus,
+        weight=10.0,
+        params={"asset_cfg": SceneEntityCfg("robot", body_names="ee_link"), "command_name": "ee_pose"},
+    )
 
     # penalties
     ee_lin_velocity = RewTerm(
@@ -159,6 +164,8 @@ class ObservationsCfg:
     # observation groups
     policy: PolicyCfg = PolicyCfg()
     debug: DebugCfg = DebugCfg()
+
+
 
 @configclass
 class UR10ReachEnvCfg(ReachEnvCfg):

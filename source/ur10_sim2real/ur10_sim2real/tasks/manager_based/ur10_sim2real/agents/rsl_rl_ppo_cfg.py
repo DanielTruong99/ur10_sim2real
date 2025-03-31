@@ -40,6 +40,6 @@ class UR10ReachPPORunnerCfg(RslRlOnPolicyRunnerCfg):
 
 @configclass
 class UR10ReachPPORunnerPlayCfg(UR10ReachPPORunnerCfg):
-    resume = True
-    load_run = "2025-03-31_23-19-16"
-    load_checkpoint = "model_400.pt"
+    resume = False
+    # load_run = "2025-03-31_23-19-16"
+    # load_checkpoint = "model_400.pt"
